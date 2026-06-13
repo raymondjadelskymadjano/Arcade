@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Arcade de Mini-Jeux</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1 id="main-title">🎮 Arcade Centrale 🎮</h1>
+        <p id="main-subtitle">Choisissez un défi pour tester vos compétences</p>
+        <button id="back-to-hub" class="back-btn hidden">⬅ Retour au Hub</button>
+    </header>
+
+    <main>
+        <section id="hub-screen" class="game-container">
+            <div class="game-card" data-game="morpion">
+                <h3>⭕ Morpion ❌</h3>
+                <p>Le classique duel d'alignement de symboles.</p>
+                <button class="play-btn">Jouer</button>
+            </div>
+
+            <div class="game-card" data-game="quiz">
+                <h3>🧠 Quiz Master 🧠</h3>
+                <p>Un test complet pour votre culture générale.</p>
+                <button class="play-btn">Jouer</button>
+            </div>
+
+            <div class="game-card" data-game="cartes">
+                <h3>🃏 Memory Cards 🃏</h3>
+                <p>Retrouvez les paires d'emojis identiques.</p>
+                <button class="play-btn">Jouer</button>
+            </div>
+
+            <div class="game-card" data-game="logique">
+                <h3>🔢 Logique Numérique 🔢</h3>
+                <p>Devinez le nombre secret avec des indices.</p>
+                <button class="play-btn">Jouer</button>
+            </div>
+
+            <div class="game-card" data-game="arcade">
+                <h3>🕹️ Reflex Clicker 🕹️</h3>
+                <p>Un mini-jeu de rapidité contre la montre.</p>
+                <button class="play-btn">Jouer</button>
+            </div>
+        </section>
+
+        <section id="game-morpion" class="game-screen hidden">
+            <h2>⭕ Morpion ❌</h2>
+            <p id="morpion-status">Tour du joueur : ❌</p>
+            <div id="morpion-board" class="grid-3x3"></div> 
+            <button id="morpion-reset" class="action-btn">Recommencer</button>
+        </section>
+
+        <section id="game-quiz" class="game-screen hidden">
+            <h2>🧠 Quiz Master</h2>
+            <div id="quiz-container" class="quiz-box">
+                <h3 id="quiz-question">Chargement de la question...</h3>
+                <div id="quiz-options" class="options-grid"></div>
+                <p id="quiz-score"></p>
+            </div>
+        </section>
+
+        <section id="game-cartes" class="game-screen hidden">
+            <h2>🃏 Jeu de Mémoire</h2>
+            <p>Trouvez toutes les paires en retournant les cartes.</p>
+            <div id="memory-board" class="cards-grid"></div>
+        </section>
+
+        <section id="game-logique" class="game-screen hidden">
+            <h2>🔢 Le Juste Nombre</h2>
+            <div id="logic-game" class="form-container">
+                <p>Trouvez le nombre secret entre 1 et 100</p>
+                <input type="number" id="logic-input" placeholder="Votre proposition..." min="1" max="100">
+                <button id="logic-submit" class="action-btn">Vérifier</button>
+                <p id="logic-feedback">En attente de votre premier essai...</p>
+            </div>
+        </section>
+
+        <section id="game-arcade" class="game-screen hidden">
+            <h2>🕹️ Reflex Clicker</h2>
+            <div class="stats-bar">
+                <span id="arcade-timer">Temps : 10s</span>
+                <span id="arcade-score">Points : 0</span>
+            </div>
+            <p>Cliquez sur la cible dès qu'elle bouge pour lancer le chrono !</p>
+            <div id="arcade-canvas" class="game-zone">
+                <button id="arcade-target">CLIQUE !</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 - Hub de Jeux Tout-en-Un</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
